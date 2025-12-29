@@ -1,0 +1,15 @@
+# Ignore everything by default
+*
+
+# But include the Engine source code directories
+!Assets/
+!Assets/Engine/
+!Assets/Engine/**/
+
+# Include .cs and .asmdef files in Engine
+!Assets/Engine/**/*.cs
+!Assets/Engine/**/*.asmdef
+
+# Include README and gitignore
+!README.md
+!.gitignore
