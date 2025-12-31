@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../getting-started/">
+        <link rel="prev" href="../concepts/">
       
       
-        <link rel="next" href="../actions/">
+        <link rel="next" href="../creating-content/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Core Concepts - Interactive Fiction Engine</title>
+        <title>Actions - Interactive Fiction Engine</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#core-concepts" class="md-skip">
+        <a href="#actions" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Core Concepts
+              Actions
             
           </span>
         </div>
@@ -255,6 +255,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -274,7 +301,7 @@
   <span class="md-ellipsis">
     
   
-    Core Concepts
+    Actions
   
 
     
@@ -292,7 +319,7 @@
   <span class="md-ellipsis">
     
   
-    Core Concepts
+    Actions
   
 
     
@@ -318,10 +345,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objects" class="md-nav__link">
+  <a href="#built-in-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objects
+        Built-in Actions
       
     </span>
   </a>
@@ -329,10 +356,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kinds" class="md-nav__link">
+  <a href="#system-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kinds
+        System Commands
       
     </span>
   </a>
@@ -340,32 +367,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
+  <a href="#customizing-actions-on-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Properties
+        Customizing Actions on Objects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing Actions on Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Responses
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#actions" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#action-restrictions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Actions
+        Action Restrictions
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#game-flow" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#action-overrides" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Game Flow
+        Action Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-custom-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Custom Actions
       
     </span>
   </a>
@@ -376,33 +431,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../actions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Actions
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -461,10 +489,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objects" class="md-nav__link">
+  <a href="#built-in-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Objects
+        Built-in Actions
       
     </span>
   </a>
@@ -472,10 +500,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kinds" class="md-nav__link">
+  <a href="#system-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kinds
+        System Commands
       
     </span>
   </a>
@@ -483,32 +511,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#properties" class="md-nav__link">
+  <a href="#customizing-actions-on-objects" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Properties
+        Customizing Actions on Objects
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing Actions on Objects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Responses
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#actions" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#action-restrictions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Actions
+        Action Restrictions
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#game-flow" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#action-overrides" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Game Flow
+        Action Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-custom-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Custom Actions
       
     </span>
   </a>
@@ -532,125 +588,154 @@
 
 
 
-<h1 id="core-concepts">Core Concepts</h1>
-<h2 id="objects">Objects</h2>
-<p>Everything in the game world is a <strong>BaseObject</strong> — rooms, items, characters, doors.</p>
-<p>Each object has:</p>
+<h1 id="actions">Actions</h1>
+<h2 id="built-in-actions">Built-in Actions</h2>
 <table>
 <thead>
 <tr>
-<th>Property</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>mainName</code></td>
-<td>How the player refers to it</td>
-</tr>
-<tr>
-<td><code>aliases</code></td>
-<td>Alternative names ("key", "brass key")</td>
-</tr>
-<tr>
-<td><code>initialAppearance</code></td>
-<td>Description shown on first encounter</td>
-</tr>
-<tr>
-<td><code>hasBeenInteractedWith</code></td>
-<td>Tracks if player has manipulated it</td>
-</tr>
-</tbody>
-</table>
-<h2 id="kinds">Kinds</h2>
-<p>Specialized object types with built-in behaviors:</p>
-<table>
-<thead>
-<tr>
-<th>Kind</th>
+<th>Action</th>
+<th>Aliases</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Room</strong></td>
-<td>A location with exits, tracks visit count</td>
+<td><code>look</code></td>
+<td>observe, watch</td>
+<td>Describe current room</td>
 </tr>
 <tr>
-<td><strong>Creature</strong></td>
-<td>Living entity (player or NPC)</td>
+<td><code>examine</code></td>
+<td>x, inspect, look at</td>
+<td>Look closely at something</td>
 </tr>
 <tr>
-<td><strong>Container</strong></td>
-<td>Holds other objects</td>
+<td><code>take</code></td>
+<td>grab, pick up</td>
+<td>Add item to inventory</td>
 </tr>
 <tr>
-<td><strong>Door</strong></td>
-<td>Openable/lockable barrier</td>
+<td><code>go</code></td>
+<td>—</td>
+<td>Move through an exit</td>
 </tr>
 <tr>
-<td><strong>Exit</strong></td>
-<td>Connection between rooms</td>
+<td><code>open</code></td>
+<td>—</td>
+<td>Open a door or container</td>
 </tr>
 <tr>
-<td><strong>Supporter</strong></td>
-<td>Surface that holds items</td>
+<td><code>close</code></td>
+<td>shut</td>
+<td>Close a door or container</td>
 </tr>
 <tr>
-<td><strong>Scenery</strong></td>
-<td>Background, non-interactive</td>
+<td><code>lock</code></td>
+<td>—</td>
+<td>Lock with a key</td>
+</tr>
+<tr>
+<td><code>unlock</code></td>
+<td>—</td>
+<td>Unlock with a key</td>
+</tr>
+<tr>
+<td><code>inventory</code></td>
+<td>i, inv</td>
+<td>List carried items</td>
+</tr>
+<tr>
+<td><code>attack</code></td>
+<td>hit, strike, punch</td>
+<td>Attack something</td>
+</tr>
+<tr>
+<td><code>listen</code></td>
+<td>hear</td>
+<td>Listen to surroundings</td>
+</tr>
+<tr>
+<td><code>smell</code></td>
+<td>sniff</td>
+<td>Smell something</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>?, hint, commands</td>
+<td>Show available commands</td>
 </tr>
 </tbody>
 </table>
-<h2 id="properties">Properties</h2>
-<p>Attachable traits that define what objects can do:</p>
+<h2 id="system-commands">System Commands</h2>
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Command</th>
 <th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Openable</code></td>
-<td>Can be opened/closed</td>
+<td><code>quit</code></td>
+<td>End game and exit</td>
 </tr>
 <tr>
-<td><code>Lockable</code></td>
-<td>Can be locked/unlocked with a key</td>
+<td><code>exit</code></td>
+<td>Same as quit</td>
 </tr>
 <tr>
-<td><code>HoldsContents</code></td>
-<td>Can contain other objects</td>
-</tr>
-<tr>
-<td><code>FixedInPlace</code></td>
-<td>Cannot be taken</td>
-</tr>
-<tr>
-<td><code>Lightable</code></td>
-<td>Can be lit or dark</td>
+<td><code>q</code></td>
+<td>Same as quit</td>
 </tr>
 </tbody>
 </table>
-<h2 id="actions">Actions</h2>
-<p>Player verbs that interact with the world:</p>
-<ul>
-<li><strong>Execute</strong>: Performs the action, returns success/failure</li>
-<li><strong>CanApplyToItem</strong>: Validates if action works on target</li>
-<li><strong>CanAffectWorld</strong>: If true, triggers <code>hasBeenInteractedWith</code></li>
-</ul>
-<h2 id="game-flow">Game Flow</h2>
-<pre><code>Player Input → Parser → GameController → Action → Events → Display
-</code></pre>
+<h2 id="customizing-actions-on-objects">Customizing Actions on Objects</h2>
+<h3 id="text-responses">Text Responses</h3>
+<p>Simple text shown when action is performed:</p>
 <ol>
-<li>Player types a command</li>
-<li>Parser extracts action + target</li>
-<li>Controller validates and executes</li>
-<li>Action generates events</li>
-<li>Orchestrator displays results</li>
+<li>Select your object in Inspector</li>
+<li>Expand <strong>Text Responses</strong></li>
+<li>Add entry: Action Keyword = "examine", Response = "It's a rusty old key."</li>
 </ol>
+<h3 id="action-restrictions">Action Restrictions</h3>
+<p>Block actions with a message:</p>
+<ol>
+<li>Expand <strong>Action Restrictions</strong></li>
+<li>Add entry: Action Keyword = "take", Message = "It's bolted to the floor."</li>
+</ol>
+<h3 id="action-overrides">Action Overrides</h3>
+<p>Replace default behavior entirely:</p>
+<ol>
+<li>Create a custom Action asset</li>
+<li>Expand <strong>Action Overrides</strong> on your object</li>
+<li>Assign your custom action</li>
+</ol>
+<h2 id="creating-custom-actions">Creating Custom Actions</h2>
+<ol>
+<li>Create a new C# script extending <code>Action</code></li>
+<li>Add <code>[CreateAssetMenu]</code> attribute</li>
+<li>Implement required methods</li>
+<li>Create asset in <code>Resources/Actions/</code> or <code>GameWorld/CustomActions/</code></li>
+</ol>
+<pre><code class="language-csharp">[CreateAssetMenu(fileName = &quot;Dance&quot;, menuName = &quot;IFEngine/Actions/CustomActions/Dance&quot;)]
+public class Dance : Action
+{
+    public override string Keyword =&gt; &quot;dance&quot;;
+    public override List&lt;string&gt; Aliases { get; } = new() { &quot;boogie&quot; };
+    public override bool CanAffectWorld =&gt; false;
+    public override ItemApplicabilityLevel ItemApplicabilityLevel =&gt; ItemApplicabilityLevel.NA;
+
+    public override bool CanApplyToItem(BaseObject item) =&gt; true;
+
+    public override ActionStatus Execute(GameController controller, BaseObject item)
+    {
+        return ActionHelper.LogActionAndReturnStatus(
+            gameController: controller,
+            message: &quot;You dance a little jig.&quot;
+        );
+    }
+}
+</code></pre>
 
 
 
