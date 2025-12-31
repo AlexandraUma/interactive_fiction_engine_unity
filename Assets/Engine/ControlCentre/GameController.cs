@@ -285,6 +285,12 @@ public class GameController
         ActionStatus? actionStatus = actionToRun.Execute(this, item);
         if (actionStatus == ActionStatus.SUCCESSFUL)
         {
+            // Mark the item as interacted with if this action affects the world
+            if (actionToRun.CanAffectWorld)
+            {
+                item.hasBeenInteractedWith = true;
+            }
+
             HandleActionResponse(actionToRun, item);
         }
     }

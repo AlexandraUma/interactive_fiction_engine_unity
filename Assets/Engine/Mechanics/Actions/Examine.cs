@@ -75,11 +75,24 @@ public class Examine : Action
 
     /// <summary>
     /// Logs the item's examine response, description, or a default text.
+    /// On first examination (before any world-affecting interaction), shows initialAppearance if set.
     /// </summary>
     private ActionStatus ExamineItem(GameController controller, BaseObject item)
     {
         string textResponse = ActionHelper.GetTextResponse(item, Keyword);
-        textResponse ??= $"You don't see anything special about the {item.mainName}.";
+
+        if (textResponse == null)
+        {
+            // Show initialAppearance only if the item hasn't been interacted with yet
+            if (!item.hasBeenInteractedWith && !string.IsNullOrWhiteSpace(item.initialAppearance))
+            {
+                textResponse = item.initialAppearance;
+            }
+            else
+            {
+                textResponse = $"You don't see anything special about the {item.mainName}.";
+            }
+        }
 
         return ActionHelper.LogActionAndReturnStatus(
             gameController: controller,

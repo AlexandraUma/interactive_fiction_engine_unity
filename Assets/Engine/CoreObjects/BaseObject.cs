@@ -50,6 +50,9 @@ public partial class BaseObject : ScriptableObject
     /* The appearance of the objective before it's interacted with. */
     public string initialAppearance;
 
+    [Tooltip("Set to true after any world-affecting action has been performed on this object.")]
+    public bool hasBeenInteractedWith = false;
+
     /***************** Text Responses *****************/
     [Header("Text Responses")]
     /* Text responses are basically a narration of the corresponding action.*/
