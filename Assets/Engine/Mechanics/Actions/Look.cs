@@ -62,27 +62,32 @@ public class Look : Action
         BaseObject currentRoom = controller.objectsManager.CurrentRoom
             ?? throw new InvalidOperationException("No current room is set in the game world.");
 
+        // Get the room name for the header
+        string roomName = string.IsNullOrEmpty(currentRoom.mainName)
+            ? currentRoom.name
+            : currentRoom.mainName;
+
         // Try to find a specific "look" text response for the room; otherwise use the room's
-        // initial appearance on first visit. If neither applies, fall back to a generic description.
-        string textResponse = ActionHelper.GetTextResponse(currentRoom, Keyword);
-        if (textResponse == null)
+        // initial appearance on first look. If neither applies, fall back to a generic description.
+        string description = ActionHelper.GetTextResponse(currentRoom, Keyword);
+        if (description == null)
         {
             Room room = currentRoom as Room;
-            bool isFirstVisit = room != null && room.numVisits <= 1;
+            bool isFirstLook = room != null && room.numVisits <= 1 && !currentRoom.hasBeenInteractedWith;
 
-            if (isFirstVisit && !string.IsNullOrWhiteSpace(currentRoom.initialAppearance))
+            if (isFirstLook && !string.IsNullOrWhiteSpace(currentRoom.initialAppearance))
             {
-                textResponse = currentRoom.initialAppearance;
+                description = currentRoom.initialAppearance;
+                currentRoom.hasBeenInteractedWith = true;  // Mark room as seen
             }
             else
             {
-                string roomName = string.IsNullOrEmpty(currentRoom.mainName)
-                    ? currentRoom.name
-                    : currentRoom.mainName;
-
-                textResponse = $"You are in {roomName}.";
+                description = $"You are in {roomName}.";
             }
         }
+
+        // Combine room name header with description
+        string textResponse = $"<b>{roomName}</b>\n{description}";
 
         return ActionHelper.LogActionAndReturnStatus(
             gameController: controller,

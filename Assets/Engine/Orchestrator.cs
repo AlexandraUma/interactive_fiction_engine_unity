@@ -80,6 +80,24 @@ public class Orchestrator : MonoBehaviour
         var playerInputEvent = new IFEvent(type: EventType.PLAYER_INPUT, text: input);
         DisplayEvent(playerInputEvent);
 
+        // Check for system commands first
+        string trimmedInput = input.Trim().ToLower();
+        if (trimmedInput == SystemCommands.QUIT || trimmedInput == "exit" || trimmedInput == "q")
+        {
+            List<IFEvent> endEvents = controller.EndGame();
+            foreach (IFEvent gameEvent in endEvents)
+            {
+                DisplayEvent(gameEvent);
+            }
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+            return;
+        }
+
         // Command parser generates a parsed command based on the player's input.
         // The parser "speaks for the player" and consults the controller (who speaks
         // for the game) when it needs to resolve item references.

@@ -4,6 +4,7 @@
 public static class SystemCommands
 {
     public const string START = "start";
+    public const string QUIT = "quit";
 }
 
 

@@ -50,7 +50,9 @@ public partial class BaseObject : ScriptableObject
     /* The appearance of the objective before it's interacted with. */
     public string initialAppearance;
 
-    [Tooltip("Set to true after any world-affecting action has been performed on this object.")]
+    // Runtime-only: resets when exiting Play Mode. Tracks if a world-affecting action
+    // has been performed on this object (used for showing initialAppearance on first interaction).
+    [System.NonSerialized]
     public bool hasBeenInteractedWith = false;
 
     /***************** Text Responses *****************/

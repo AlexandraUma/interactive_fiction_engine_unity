@@ -8,8 +8,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Room", menuName = "IFEngine/Kinds/Room")]
 public class Room : BaseObject
 {
-    [Header("Room State")]
-    [Tooltip("The number of times this room has been visited.")]
+    // Runtime-only: resets when exiting Play Mode. Tracks how many times the room has been visited.
+    [System.NonSerialized]
     public int numVisits = 0;
 
     [Header("Exits")]
