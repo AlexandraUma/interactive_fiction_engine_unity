@@ -62,15 +62,26 @@ public class Look : Action
         BaseObject currentRoom = controller.objectsManager.CurrentRoom
             ?? throw new InvalidOperationException("No current room is set in the game world.");
 
-        // Try to find a specific "look" text response for the room; otherwise use a fallback description.
+        // Try to find a specific "look" text response for the room; otherwise use the room's
+        // initial appearance on first visit. If neither applies, fall back to a generic description.
         string textResponse = ActionHelper.GetTextResponse(currentRoom, Keyword);
         if (textResponse == null)
         {
-            string roomName = string.IsNullOrEmpty(currentRoom.mainName)
-                ? currentRoom.name
-                : currentRoom.mainName;
+            Room room = currentRoom as Room;
+            bool isFirstVisit = room != null && room.numVisits <= 1;
 
-            textResponse = $"You are in {roomName}.";
+            if (isFirstVisit && !string.IsNullOrWhiteSpace(currentRoom.initialAppearance))
+            {
+                textResponse = currentRoom.initialAppearance;
+            }
+            else
+            {
+                string roomName = string.IsNullOrEmpty(currentRoom.mainName)
+                    ? currentRoom.name
+                    : currentRoom.mainName;
+
+                textResponse = $"You are in {roomName}.";
+            }
         }
 
         return ActionHelper.LogActionAndReturnStatus(
