@@ -12,4 +12,5 @@
 
 # Include README and gitignore
 !README.md
+!LICENSE.md
 !.gitignore
