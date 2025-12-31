@@ -80,6 +80,17 @@ public class ActionsManager
     }
 
     /// <summary>
+    /// Return all unique registered actions (excludes duplicates from aliases).
+    /// </summary>
+    /// <returns>List of all unique actions.</returns>
+    public List<Action> GetAllActions()
+    {
+        // Use HashSet to deduplicate since aliases point to the same action
+        var uniqueActions = new HashSet<Action>(actions.Values);
+        return new List<Action>(uniqueActions);
+    }
+
+    /// <summary>
     /// Add a global restriction to the input action.
     /// </summary>
     /// <param name="actionKeyword">The action keyword to restrict.</param>
