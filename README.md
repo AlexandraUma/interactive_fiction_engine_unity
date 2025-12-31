@@ -7,18 +7,21 @@ A Unity-based engine for creating text-based interactive fiction games. The engi
 **BaseObject** is the foundation for all game entities. Every object in the world (rooms, items, characters) inherits from `BaseObject`. It provides:
 
 - **Identity**: `mainName` and `aliases` for player references
-- **Appearance**: `initialAppearance` text shown when examined
+- **Appearance**: `initialAppearance` text shown on first encounter (before any world-affecting interaction)
+- **Interaction tracking**: `hasBeenInteractedWith` automatically set after take, open, attack, etc.
 - **Sensory properties**: visibility, scent, taste, sound
 - **Properties system**: attachable traits that define behavior
 - **Action customization**: text responses, restrictions, overrides, and after-effects
 
-Objects are Unity ScriptableObjects, authored in the Inspector and referenced at runtime.
+Objects are Unity ScriptableObjects, authored in the Inspector and referenced at runtime. Runtime state (like interaction tracking) resets when exiting Play Mode.
 
-**Action** is the abstract base class for all player verbs. Actions define what players can do in the game world. Each action specifies:
+**Action** is the abstract base class for all player verbs. Actions are ScriptableObjects that define what players can do in the game world. Each action specifies:
 - A keyword and aliases (e.g., "take", "get", "pick up")
 - Whether it requires an item, accepts one optionally, or doesn't use items
 - Validation logic for whether it can apply to a specific object
 - Execution logic that returns an `ActionStatus` (SUCCESSFUL, FAILED, INEFFECTIVE, RESTRICTED)
+
+Actions are created as assets in `Resources/Actions/` and loaded automatically at runtime.
 
 **Action Responses** allow objects to customize behavior when actions are performed on them:
 - **Text Responses**: Simple text messages displayed when an action is performed (e.g., "The door creaks open")
@@ -43,7 +46,7 @@ Properties are queried at runtime via `GetProperty<T>()` or `HasProperty<T>()`. 
 
 Kinds are specialized `BaseObject` subclasses for common game entity types:
 
-- **Room**: Game spaces with exits and visit tracking
+- **Room**: Game spaces with exits and visit tracking (`numVisits` increments on each entry)
 - **Creature**: Living actors (player/NPC) with gender-based pronouns
 - **Container**: Objects that hold other objects
 - **Exit**: Connections between rooms, optionally with doors
@@ -62,9 +65,11 @@ Actions define player verbs. Each action:
 - Implements `CanApplyToItem()` for item validation
 - Implements `Execute()` which returns `ActionStatus` (SUCCESSFUL, FAILED, INEFFECTIVE, RESTRICTED)
 
-**RegisteredActions** provides the core action set: `Attack`, `Close`, `Examine`, `Go`, `Listen`, `Lock`, `Look`, `Open`, `Smell`, `Take`, `Unlock`, `Inventory`.
+Core actions are loaded from `Resources/Actions/`: `Attack`, `Close`, `Examine`, `Go`, `Help`, `Listen`, `Lock`, `Look`, `Open`, `Smell`, `Take`, `Unlock`, `Inventory`.
 
 **Custom actions** can be added via the Orchestrator's `customActions` list. Actions are registered with `ActionsManager` which handles keyword resolution and restrictions.
+
+**System commands** are handled separately from actions: `quit` (or `exit`, `q`) ends the game and exits Play Mode.
 
 ## Control Centre
 
@@ -83,8 +88,9 @@ The controller validates objects at startup and throws early if configuration is
 
 The **Orchestrator** is a Unity MonoBehaviour that bridges the engine with Unity's UI system. It:
 
+- Loads core actions from `Resources/Actions/` at startup
 - Initializes the `GameController` with rooms, characters, and actions
-- Handles player input from a text field
+- Handles player input and system commands (`quit`, `exit`)
 - Displays game events with typing effects
 - Manages UI state (scrolling, input focus)
 
