@@ -59,9 +59,10 @@ public static class TextFormatter
 
 
     /***************** Formatting Functions *****************/
+
     private static string PrologueAsEvent(string prologue)
     {
-        return $"{TextFormatter.Italic(prologue)}\n\n";
+        return $"{TextFormatter.Italic(prologue)}\n";
     }
 
     private static string PlayerInputAsEvent(string playerInput)
@@ -69,9 +70,9 @@ public static class TextFormatter
         return $"> {TextFormatter.Bold(playerInput)}\n";
     }
 
-    private static string TextAsDefaultEvent(string event_text)
+    private static string TextAsDefaultEvent(string eventText)
     {
-        return $"{event_text}\n\n";
+        return $"{eventText}\n\n";
     }
 
     private static string RoomNameAsEvent(string roomName)
