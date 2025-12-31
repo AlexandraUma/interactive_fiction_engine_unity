@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "look" action in the interactive fiction engine.
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 /// - If an item is given, delegate to the "examine" action on that item.
 /// - Otherwise, show the current room's name and description.
 /// </summary>
+[CreateAssetMenu(fileName = "Look", menuName = "IFEngine/Actions/CoreActions/Look")]
 public class Look : Action
 {
     /// <summary>

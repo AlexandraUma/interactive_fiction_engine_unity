@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "go" action in the interactive fiction engine.
@@ -12,6 +13,7 @@ using System.Collections.Generic;
 /// - Success:
 ///   - Move to the destination room (with or without opening a door first).
 /// </summary>
+[CreateAssetMenu(fileName = "Go", menuName = "IFEngine/Actions/CoreActions/Go")]
 public class Go : Action
 {
     /// <summary>

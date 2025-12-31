@@ -1,10 +1,11 @@
 using System.Collections.Generic;
-
+using UnityEngine;
 
 /// <summary>
 /// Handles the "attack" action (and its aliases) in the interactive fiction engine.
 /// Mirrors the behaviour of the original Python Attack action.
 /// </summary>
+[CreateAssetMenu(fileName = "Attack", menuName = "IFEngine/Actions/CoreActions/Attack")]
 public class Attack : Action
 {
     /// <summary>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "listen" action in the interactive fiction engine.
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 /// - With an item: describe the sound from that item, or a default if silent.
 /// - Without an item: describe the ambient sound in the current room.
 /// </summary>
+[CreateAssetMenu(fileName = "Listen", menuName = "IFEngine/Actions/CoreActions/Listen")]
 public class Listen : Action
 {
     /// <summary>

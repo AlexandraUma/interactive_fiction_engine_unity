@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "inventory" action in the interactive fiction engine.
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 /// - Lists all items currently carried by the player, or reports that the
 ///   player is not carrying anything.
 /// </summary>
+[CreateAssetMenu(fileName = "Inventory", menuName = "IFEngine/Actions/CoreActions/Inventory")]
 public class Inventory : Action
 {
     /// <summary>

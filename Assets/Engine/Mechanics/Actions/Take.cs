@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "take" action in the interactive fiction engine.
@@ -9,6 +9,7 @@ using System.Collections.Generic;
 /// - Failure: item cannot be taken (e.g. fixed in place).
 /// - Ineffective: item is already carried by the player.
 /// </summary>
+[CreateAssetMenu(fileName = "Take", menuName = "IFEngine/Actions/CoreActions/Take")]
 public class Take : Action
 {
     /// <summary>

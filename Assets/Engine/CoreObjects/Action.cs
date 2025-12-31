@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 // Defines the scope of items that an action can be applied to.
 public enum ItemApplicabilityLevel
@@ -32,7 +33,7 @@ public enum ActionStatus
 }
 
 // Abstract base class for all actions in the interactive fiction engine.
-public abstract class Action
+public abstract class Action: ScriptableObject
 {
     // The verb that triggers the Action.
     public abstract string Keyword { get; }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "examine" action in the interactive fiction engine.
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 /// - With an item: logs the item's examine text response or a default description.
 /// - Without an item: redirects to the "look" action.
 /// </summary>
+[CreateAssetMenu(fileName = "Examine", menuName = "IFEngine/Actions/CoreActions/Examine")]
 public class Examine : Action
 {
     /// <summary>

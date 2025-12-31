@@ -33,7 +33,7 @@ public class Orchestrator : MonoBehaviour
     public List<BaseObject> nonPlayerCharacters;
 
     [Header("Actions")]
-    private List<Action> registeredActions = RegisteredActions.Create();
+    private List<Action> registeredActions;
     public List<Action> customActions = new();
 
     [Header("Control Centre")]
@@ -43,6 +43,9 @@ public class Orchestrator : MonoBehaviour
     public void Start()
     {
         Debug.Log("Starting the application...");
+
+        // Load the registered actions
+        registeredActions = RegisteredActions.Create();
 
         // When play starts, clear the text area and display the intro
         historyText.text = "";

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "unlock" action in the interactive fiction engine.
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 /// - Success: item is unlocked and a response is logged.
 /// - Ineffective: item is already unlocked.
 /// </summary>
+[CreateAssetMenu(fileName = "Unlock", menuName = "IFEngine/Actions/CoreActions/Unlock")]
 public class Unlock : Action
 {
     /// <summary>

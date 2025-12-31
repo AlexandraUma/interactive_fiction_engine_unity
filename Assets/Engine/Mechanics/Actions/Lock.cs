@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "lock" action in the interactive fiction engine.
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 /// - Success: item is locked and a response is logged.
 /// - Ineffective: item is already locked.
 /// </summary>
+[CreateAssetMenu(fileName = "Lock", menuName = "IFEngine/Actions/CoreActions/Lock")]
 public class Lock : Action
 {
     /// <summary>

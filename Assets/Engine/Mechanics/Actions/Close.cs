@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "close" action in the interactive fiction engine.
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 /// - Success: item is closed and a response is logged.
 /// - Ineffective: item is already closed.
 /// </summary>
+[CreateAssetMenu(fileName = "Close", menuName = "IFEngine/Actions/CoreActions/Close")]
 public class Close : Action
 {
     /// <summary>

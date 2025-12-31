@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "open" action in the interactive fiction engine.
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 /// - Success: item is opened and a response is logged.
 /// - Ineffective: item is already open.
 /// </summary>
+[CreateAssetMenu(fileName = "Open", menuName = "IFEngine/Actions/CoreActions/Open")]
 public class Open : Action
 {
     /// <summary>

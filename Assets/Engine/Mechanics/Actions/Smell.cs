@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using UnityEngine;
 
 /// <summary>
 /// Handles the "smell" action in the interactive fiction engine.
@@ -9,6 +9,7 @@ using System.Linq;
 ///   if present, or falling back to its `scent` field.
 /// - Without an item: smell the current room, using its "smell" text response or `scent`.
 /// </summary>
+[CreateAssetMenu(fileName = "Smell", menuName = "IFEngine/Actions/CoreActions/Smell")]
 public class Smell : Action
 {
     /// <summary>
