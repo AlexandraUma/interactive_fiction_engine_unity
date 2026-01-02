@@ -1,6 +1,7 @@
 # Interactive Fiction Engine
 
 A Unity-based engine for creating text-based interactive fiction games. The engine provides a flexible object system, action framework, and game control architecture.
+View the documentation [here](https://alexandrauma.github.io/interactive_fiction_engine_unity/).
 
 ## Core Objects
 
