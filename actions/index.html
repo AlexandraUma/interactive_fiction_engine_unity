@@ -411,6 +411,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#action-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -549,6 +560,17 @@
     <span class="md-ellipsis">
       
         Action Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Responses
       
     </span>
   </a>
@@ -710,6 +732,14 @@
 <li>Expand <strong>Action Overrides</strong> on your object</li>
 <li>Assign your custom action</li>
 </ol>
+<h3 id="action-responses">Action Responses</h3>
+<p>Trigger side effects after a successful action:</p>
+<ol>
+<li>Create an <strong>ActionResponseLogic</strong> ScriptableObject (custom script)</li>
+<li>Expand <strong>Action Responses</strong> on your object</li>
+<li>Add entry: Action Keyword = "open", then assign your response logic</li>
+</ol>
+<p>Use for: moving items, changing states, triggering events, unlocking doors, etc.</p>
 <h2 id="creating-custom-actions">Creating Custom Actions</h2>
 <ol>
 <li>Create a new C# script extending <code>Action</code></li>
