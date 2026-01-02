@@ -1,7 +1,7 @@
 GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
-Copyright (C) 2025 [Alexandra N. Uma]
+Copyright (C) 2025 Alexandra N. Uma
 
 Everything in this repository, including the Interactive Fiction Engine (IFE) 
 core and its associated documentation, is provided under the terms of the 
